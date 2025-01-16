@@ -41,7 +41,7 @@ void setup()
   rf95.setTxPower(13);  //25 mW is 13.9 dB
    
   // Setup Spreading Factor  
-  rf95.setSpreadingFactor(7);  
+  rf95.setSpreadingFactor(10);  
  
   // Setup BandWidth, option  
   rf95.setSignalBandwidth(125000);  
@@ -162,5 +162,8 @@ if (rf95.waitAvailableTimeout(4000)) //(rf95.waitAvailableTimeout(3000))
       Serial.print(stat.unknown);
       Serial.println("\n");
   }
-  delay(3000);  
+  long my_rand_time = random(2,10);
+  Serial.print("random number generated : ");
+  Serial.println(my_rand_time);
+  delay(my_rand_time*1000);  
 } 
